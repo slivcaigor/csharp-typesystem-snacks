@@ -1,8 +1,8 @@
 ﻿// 7. Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 
-int[] numeri = new int[4];
+int[] numeri = new int[6];
 int count = 0;
-while (count < 4)
+while (count < 6)
 {
     Console.Write("Inserisci un numero: ");
     if (int.TryParse(Console.ReadLine(), out int numero))
