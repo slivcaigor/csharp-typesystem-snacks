@@ -4,7 +4,7 @@
 int somma = 0;
 for (int i = 1; i <= 10; i++)
 {
-    Console.Write("Inserisci il numero {0}: ", i);
+    Console.Write($"Inserisci il numero {i}:");
     if (!int.TryParse(Console.ReadLine(), out int numero))
     {
         Console.WriteLine("Numero non valido. Riprova.");
@@ -15,6 +15,6 @@ for (int i = 1; i <= 10; i++)
         somma += numero;
     }
 }
-Console.WriteLine("La somma dei numeri inseriti è: {0}", somma);
+Console.WriteLine($"La somma dei numeri inseriti è: {somma}");
 Console.ReadLine();
 
