@@ -4,27 +4,65 @@
 //	1. L’utente inserisce due numeri in successione.
 //	Il software stampa il maggiore.
 
-Console.WriteLine("Inserisci il primo numero:");
-int num1;
-while (!int.TryParse(Console.ReadLine(), out num1))
+//Console.WriteLine("Inserisci il primo numero:");
+//int num1;
+//while (!int.TryParse(Console.ReadLine(), out num1))
+//{
+//    Console.WriteLine("Inserisci un numero valido:");
+//}
+
+//Console.WriteLine("Inserisci il secondo numero:");
+//int num2;
+//while (!int.TryParse(Console.ReadLine(), out num2))
+//{
+//    Console.WriteLine("Inserisci un numero valido:");
+//}
+
+//if (num1 > num2)
+//{
+//    Console.WriteLine($"Il primo numero è maggiore! -> {num1}");
+//}
+//else
+//{
+//    Console.WriteLine($"Il secondo numero è maggiore!  -> {num2}");
+//}
+
+//Console.ReadLine();
+
+
+
+
+
+//	2. L’utente inserisce due parole in successione.
+//	Il software stampa prima la parola più corta, poi la parola più lunga.
+
+Console.WriteLine("Inserisci la prima parola:");
+string parola1 = Console.ReadLine() ?? string.Empty;
+while (string.IsNullOrWhiteSpace(parola1) || parola1.Any(char.IsDigit))
 {
-    Console.WriteLine("Inserisci un numero valido:");
+    Console.WriteLine("Inserisci una parola valida (senza numeri):");
+    parola1 = Console.ReadLine() ?? string.Empty;
 }
 
-Console.WriteLine("Inserisci il secondo numero:");
-int num2;
-while (!int.TryParse(Console.ReadLine(), out num2))
+
+Console.WriteLine("Inserisci la seconda parola:");
+string parola2 = Console.ReadLine() ?? string.Empty;
+while (string.IsNullOrWhiteSpace(parola2) || parola2.Any(char.IsDigit))
 {
-    Console.WriteLine("Inserisci un numero valido:");
+    Console.WriteLine("Inserisci una parola valida (senza numeri):");
+    parola2 = Console.ReadLine() ?? string.Empty;
 }
 
-if (num1 > num2)
+
+if (parola1.Length < parola2.Length)
 {
-    Console.WriteLine($"Il primo numero è maggiore! -> {num1}");
+    Console.WriteLine($"La parola più corta è la prima: {parola1}");
+    Console.WriteLine($"La parola più lunga è la seconda: {parola2}");
 }
 else
 {
-    Console.WriteLine($"Il secondo numero è maggiore!  -> {num2}");
+    Console.WriteLine($"La parola più corta è la seconda: {parola2}");
+    Console.WriteLine($"La parola più lunga è la prima: {parola1}");
 }
 
 Console.ReadLine();
@@ -32,9 +70,6 @@ Console.ReadLine();
 
 
 
-
-//	2. L’utente inserisce due parole in successione.
-//		Il software stampa prima la parola più corta, poi la parola più lunga.
 //Ciclo for
 //    3. Il software deve chiedere per 10 volte all’utente di inserire un numero.
 //Il programma stampa la somma di tutti i numeri inseriti.
