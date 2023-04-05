@@ -1,25 +1,38 @@
 ﻿// 9. Crea un array vuoto e chiedi all’utente un numero da inserire nell’array. Continua a chiedere i numeri all’utente e a inserirli nell’array, fino a quando la somma degli elementi è minore di 50.
 
-int[] numeri = new int[8];
+int[] numeri = Array.Empty<int>();
 int somma = 0;
-int i = 0;
+int numero;
 
 Console.Write("Inserisci un numero: ");
-int numero = Convert.ToInt32(Console.ReadLine());
+while (!int.TryParse(Console.ReadLine(), out numero))
+{
+    Console.WriteLine("Numero non valido. Inserisci solo numeri.");
+    Console.Write("Inserisci un numero: ");
+}
 
 while (somma + numero < 50)
 {
-    numeri[i] = numero;
+    Array.Resize(ref numeri, numeri.Length + 1);
+    numeri[^1] = numero;
     somma += numero;
-    i++;
 
     Console.Write("Inserisci un numero: ");
-    numero = Convert.ToInt32(Console.ReadLine());
+    while (!int.TryParse(Console.ReadLine(), out numero))
+    {
+        Console.WriteLine("Numero non valido. Inserisci solo numeri.");
+        Console.Write("Inserisci un numero: ");
+    }
 }
 
 Console.WriteLine("La somma degli elementi è maggiore di 50. Ecco i numeri inseriti:");
-for (int j = 0; j < i; j++)
+foreach (int n in numeri)
 {
-    Console.WriteLine(numeri[j]);
+    Console.WriteLine(n);
 }
+
 Console.ReadLine();
+
+
+
+
