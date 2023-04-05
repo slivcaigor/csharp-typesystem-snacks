@@ -29,13 +29,13 @@ Console.ReadLine();
     if (primaParola.Length == secondaParola.Length)
     {
         Console.WriteLine("Le due parole hanno la stessa lunghezza.");
-        Console.WriteLine("Prima parola: " + primaParola);
-        Console.WriteLine("Seconda parola: " + secondaParola);
+        Console.WriteLine($"Prima parola: {primaParola}");
+        Console.WriteLine($"Seconda parola: {secondaParola}");
     }
     else
     {
         Console.WriteLine("Le due parole hanno lunghezza diversa.");
-        Console.WriteLine("La parola più lunga è: " + (primaParola.Length > secondaParola.Length ? primaParola : secondaParola));
+        Console.WriteLine($"La parola più lunga è: {(primaParola.Length > secondaParola.Length ? primaParola : secondaParola)}");
     }
 }
 
